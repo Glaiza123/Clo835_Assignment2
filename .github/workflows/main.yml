@@ -32,10 +32,8 @@ jobs:
         ECR_REPOSITORY: gfcadiz_ecr
         IMAGE_TAG: v0.1
       run: |
-        
         #Docker build
         docker build -f Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         
     - name: Build, test, tag, and push image to Amazon ECR
@@ -44,8 +42,6 @@ jobs:
         ECR_REPOSITORY: gfcadiz_ecr
         IMAGE_TAG: v0.2
       run: |
-        
         #Docker build
         docker build -f Dockerfile_mysql -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
