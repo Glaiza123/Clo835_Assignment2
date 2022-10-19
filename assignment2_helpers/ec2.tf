@@ -53,3 +53,12 @@ resource "aws_key_pair" "k8s" {
   key_name   = "assignment2"
   public_key = file("${path.module}/assignment.pub")
 }
+
+#ECR
+  resource "aws_ecr_repository" "foo" {
+  name = "gfcadiz_ecr"
+  image_tag_mutability = "MUTABLE"
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
