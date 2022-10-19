@@ -31,6 +31,9 @@ jobs:
         ECR_REPOSITORY: assignment2_ecr
         IMAGE_TAG: v0.1
       run: |
+        cd Glaiza123/clo835_assignment2
+        ls -ltra
+        
         #Docker build
         docker build -f Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         
@@ -42,6 +45,8 @@ jobs:
         ECR_REPOSITORY: assignment2_ecr
         IMAGE_TAG: v1.0
       run: |
+        cd Glaiza123/clo835_assignment2
+        ls -ltra
         
         #Docker build
         docker build -f Dockerfile_mysql -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
