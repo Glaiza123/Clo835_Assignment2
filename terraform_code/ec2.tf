@@ -53,3 +53,20 @@ resource "aws_key_pair" "k8s" {
   key_name   = "week5"
   public_key = file("${path.module}/week5.pub")
 }
+    
+#Deploying two ECR
+  resource "aws_ecr_repository" "foo" {
+  name = "app_ecr"
+  image_tag_mutability = "MUTABLE"
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
+    
+  resource "aws_ecr_repository" "foo" {
+  name = "mysql_ecr"
+  image_tag_mutability = "MUTABLE"
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
