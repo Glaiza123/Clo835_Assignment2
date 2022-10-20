@@ -63,7 +63,7 @@ resource "aws_key_pair" "k8s" {
   }
 }
     
-  resource "aws_ecr_repository" "foo" {
+  resource "aws_ecr_repository" "boo" {
   name = "mysql_ecr"
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
