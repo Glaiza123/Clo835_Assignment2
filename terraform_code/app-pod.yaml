@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: myapp
+    owner: glaiza
+  name: myapp-pod
+spec:
+  containers:
+  - image: 218146516368.dkr.ecr.us-east-1.amazonaws.com/app_ecr:v0.1
+    name: myapp
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+    env:
+    - name: DBPORT
+      value: "3306"
+    - name: DBHOST
+      value: 10.244.0.7
+    - name: DBUSER
+      value: root
+    - name: DBPWD
+      value: pw
