@@ -3,7 +3,7 @@ kind: Namespace
 metadata:
   name: myapp
   labels:
-    app: myapp
+    app: employees
 ---
 apiVersion: v1
 kind: Service
@@ -11,7 +11,7 @@ metadata:
   name: myapp-service
   namespace: myapp
   labels:
-   app: myapp
+   app: employees
 spec:
   type: NodePort
   ports:
@@ -19,6 +19,6 @@ spec:
     targetPort: 8080
     # Optional field
     # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
-    nodePort: 30001
+    nodePort: 30000
   selector:
-    app: myapp
+    app: employees
