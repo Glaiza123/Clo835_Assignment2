@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    app: myapp
+    app: employees
     owner: glaiza
   name: myapp-pod
 spec:
